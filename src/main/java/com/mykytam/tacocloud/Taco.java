@@ -1,4 +1,4 @@
-package com.mykytam.tacocloud.web;
+package com.mykytam.tacocloud;
 
 import lombok.Data;
 
