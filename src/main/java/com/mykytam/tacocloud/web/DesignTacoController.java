@@ -25,12 +25,6 @@ public class DesignTacoController {
     private final IngredientRepository ingredientRepo;
     private TacoRepository tacoRepo;
 
-  /*
-  public DesignTacoController(IngredientRepository ingredientRepo) {
-    this.ingredientRepo = ingredientRepo;
-  }
-  */
-
     @Autowired
     public DesignTacoController(
             IngredientRepository ingredientRepo,
@@ -52,7 +46,7 @@ public class DesignTacoController {
     @GetMapping
     public String showDesignForm(Model model) {
         List<Ingredient> ingredients = new ArrayList<>();
-        ingredientRepo.findAll().forEach(i -> ingredients.add(i));
+        ingredientRepo.findAll().forEach(ingredients::add);
 
         Type[] types = Ingredient.Type.values();
         for (Type type : types) {
