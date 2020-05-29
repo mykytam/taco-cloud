@@ -8,12 +8,7 @@
 
 <body>
 
-<form id="logoutForm" method="POST" th:action="@{/logout}">
-    <input type="submit" value="Logout"/>
-</form>
-
-<form id="orderForm" method="POST" th:action="@{/orders}"
-      th:object="${order}">
+<form id="orderForm" method="POST" th:action="@{/orders}" th:object="${order}">
     <h1>Order your taco creations!</h1>
 
     <img th:src="@{/images/TacoCloud.png}"/>

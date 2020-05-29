@@ -22,6 +22,11 @@ import java.util.Collection;
 public class User implements UserDetails {
 
     private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private final String username;
     private final String password;
     private final String fullname;
@@ -30,9 +35,6 @@ public class User implements UserDetails {
     private final String state;
     private final String zip;
     private final String phoneNumber;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
